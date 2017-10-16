@@ -1,0 +1,13 @@
+.page-header
+  %h1 Welcome to Hotel Management!
+
+%form{ action: "/home/login", method: "post" }
+  Employee ID:
+  %input{type: "text", name:"employee_id"}
+  %br
+  %br
+  Password:
+  %input{type: "text", name:"password"}
+  %br
+  %br
+  %input{type: "submit", value: "Login", class: "button"}

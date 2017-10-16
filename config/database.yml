@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: hotel_development
+  pool: 5
+  username: iahmed
+  password: password1
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: hotel_test
+  pool: 5
+  username: iahmed
+  password: password1
