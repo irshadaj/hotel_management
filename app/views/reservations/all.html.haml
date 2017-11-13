@@ -1,0 +1,22 @@
+%h1 Reservations#all
+
+%br
+= link_to("New Reservation", "/reservations/new/")
+%br
+
+%ol
+  - @reservations.each do |recommendation|
+    %li
+    = link_to(reservation.customer.name, "/reservations/edit/" + reservation.id.to_s)
+    %br
+    %b From
+    #{recommendation.from_user.full_name}
+    %br
+    %b To
+    #{recommendation.to_user.full_name}
+    %br
+
+    - unless recommendation.comments.nil?
+      %b Comment
+      #{recommendation.comments}
+  %hr
