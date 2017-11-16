@@ -1,2 +1,35 @@
-%h1 Reservations#edit
-%p Find me in app/views/reservations/edit.html.haml
+= form_for :reservation do |f|
+  Customer name:
+  = collection_select(:reservation, :customer_id, @customers.all, :id, :name)
+  %br
+  %br
+  Room number:
+  %input{:type=>"text", :required=>"true", :name=>"room"}
+  %br
+  %br
+  Start Date:
+  %input{:type=>"text", :required=>"true", :name=>"start_date"}
+  %br
+  %br
+  End Date:
+  %input{:type=>"text", :required=>"true", :name=>"end_date"}
+  %br
+  %br
+  = f.submit "Save"
+
+  %br
+  %br
+  
+  %hr
+
+  %br
+  %br
+  = link_to("Back to reservations", "/reservations/all")
+
+  %br
+  %br
+  = link_to("Home", "/dashboard")
+
+  %br
+  %br
+  = link_to("Logout", "/")

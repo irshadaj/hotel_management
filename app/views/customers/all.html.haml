@@ -1,0 +1,19 @@
+%h1 Customers
+%ol
+  - @customers.each do |customer|
+    %li Name: #{customer.name}
+    Address: #{customer.address}
+
+%br
+%br
+= link_to("Create New Customer", "/customers/new")
+
+%hr
+
+  %br
+  %br
+  = link_to("Home", "/dashboard")
+
+  %br
+  %br
+  = link_to("Logout", "/")

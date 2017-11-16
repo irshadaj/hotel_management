@@ -1,0 +1,47 @@
+= form_for :customer do |f|
+  Name:
+  %input{:type=>"text", :required=>"true", :name=>"name"}
+  %br
+  %br
+  Address:
+  %input{:type=>"text", :required=>"true", :name=>"address"}
+  %br
+  %br
+  %br
+  %br
+
+  %b
+    Credit Card information:
+  %br
+  %br
+  Name on Credit Card:
+  %input{:type=>"text", :required=>"true", :name=>"credit_name"}
+  %br
+  %br
+  Number:
+  %input{:type=>"text", :required=>"true", :name=>"credit_num"}
+  %br
+  %br
+  Expiry:
+  %input{:type=>"text", :required=>"true", :name=>"credit_exp"}
+  %br
+  %br
+  CVV:
+  %input{:type=>"text", :required=>"true", :name=>"credit_cvv"}
+  %br
+  %br
+  = f.submit "Save"
+
+%hr
+
+%br
+%br
+= link_to("Back to customers", "/customers/all")
+
+%br
+%br
+= link_to("Home", "/dashboard")
+
+%br
+%br
+= link_to("Logout", "/")

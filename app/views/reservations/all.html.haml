@@ -1,22 +1,26 @@
 %h1 Reservations#all
 
 %br
-= link_to("New Reservation", "/reservations/new/")
+= link_to("New", "/reservations/new/")
+%br
+%br
+= link_to("Edit", "/reservations/edit/")
 %br
 
 %ol
-  - @reservations.each do |recommendation|
+  - @reservation.each do |reservation|
     %li
-    = link_to(reservation.customer.name, "/reservations/edit/" + reservation.id.to_s)
+    Name: #{reservation.customer.name}
     %br
-    %b From
-    #{recommendation.from_user.full_name}
+    Start #{reservation.start_date}
     %br
-    %b To
-    #{recommendation.to_user.full_name}
-    %br
+    End #{reservation.end_date}
+%hr
 
-    - unless recommendation.comments.nil?
-      %b Comment
-      #{recommendation.comments}
-  %hr
+  %br
+  %br
+  = link_to("Home", "/dashboard")
+
+  %br
+  %br
+  = link_to("Logout", "/")
