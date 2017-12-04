@@ -1,8 +1,14 @@
-= link_to("Reservations", "/reservations/all")
-%br
-%br
-= link_to("Customers", "/customers/all")
+%center
+  %h1 Home
+  %br
+  %br
+  %br
+    .row{:style => "background-color: lightblue"}
+      = link_to("Reservations", "/reservations/all")
+      %br
+      %br
+      = link_to("Customers", "/customers/all")
 
-%br
-%br
-= link_to("Logout", "/")
+      %br
+      %br
+      = link_to("Logout", "/")

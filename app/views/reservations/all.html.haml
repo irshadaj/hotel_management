@@ -1,26 +1,28 @@
-%h1 Reservations#all
+%h1 Reservations
+.row{:style => "background-color: lightgreen"}
+  %br
+  = link_to("New Reservation", "/reservations/new/")
+  %br
+  %br
 
-%br
-= link_to("New", "/reservations/new/")
-%br
-%br
-= link_to("Edit", "/reservations/edit/")
-%br
+  %ol
+    - @reservation.each do |reservation|
+      %li
+      Name: #{reservation.customer.name}
+      %br
+      Check-in: #{reservation.start_date}
+      %br
+      Check-out: #{reservation.end_date}
+      %br
+      Room: #{reservation.room}
+  %hr
 
-%ol
-  - @reservation.each do |reservation|
-    %li
-    Name: #{reservation.customer.name}
     %br
-    Start #{reservation.start_date}
     %br
-    End #{reservation.end_date}
-%hr
+    = link_to("Home", "/dashboard")
 
-  %br
-  %br
-  = link_to("Home", "/dashboard")
-
-  %br
-  %br
-  = link_to("Logout", "/")
+    %br
+    %br
+    = link_to("Logout", "/")
+    %br
+    %br

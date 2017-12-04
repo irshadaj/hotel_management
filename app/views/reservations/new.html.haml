@@ -1,37 +1,40 @@
-= form_for :reservation do |f|
-  Customer name:
-  = collection_select(:reservation, :customer_id, @customers.all, :id, :name)
-  %br
-  %br
-  Room number:
-  %input{:type=>"text", :required=>"true", :name=>"room"}
-  %br
-  %br
-  Start Date:
-  %input{:type=>"text", :required=>"true", :name=>"start_date"}
-  %br
-  %br
-  End Date:
-  %input{:type=>"text", :required=>"true", :name=>"end_date"}
-  %br
-  %br
-  = f.submit "Save"
+%center
+  %h1 Create new Reservation
+  .row{:style => "background-color: yellow"}
+    = form_for :reservation do |f|
+      Customer name:
+      = collection_select(:reservation, :customer_id, @customers.all, :id, :name)
+      %br
+      %br
+      Room number:
+      %input{:type=>"text", :required=>"true", :id =>"room", :name=>"room"}
+      %br
+      %br
+      Check-in:
+      %input{:type=>"text", :required=>"true", :id=>"start_date", :name=>"start_date"}
+      %br
+      %br
+      Check-out:
+      %input{:type=>"text", :required=>"true", :id=>"end_date", :name=>"end_date"}
+      %br
+      %br
+      = f.submit
 
-%br
-%br
-= link_to("Create new customer profile", "/customers/new/")
+    %br
+    %br
+    = link_to("Create new customer profile", "/customers/new/")
 
 
-%hr
+    %hr
 
-%br
-%br
-= link_to("Back to reservations", "/reservations/all")
+    %br
+    %br
+    = link_to("Back to reservations", "/reservations/all")
 
-%br
-%br
-= link_to("Home", "/dashboard")
+    %br
+    %br
+    = link_to("Home", "/dashboard")
 
-%br
-%br
-= link_to("Logout", "/")
+    %br
+    %br
+    = link_to("Logout", "/")

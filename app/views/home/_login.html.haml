@@ -1,10 +1,15 @@
-%form{ action: "/home/signin", method: "post" }
-  Employee ID:
-  %input{type: "text", name:"employee_id"}
-  %br
-  %br
-  Password:
-  %input{type: "text", name:"password"}
-  %br
-  %br
-  %input{type: "submit", value: "Login"}
+.row{:style => "background-color: lemonchiffon"}
+  %center
+    %form{ action: "/home/signin", method: "post" }
+      Employee ID:
+      %input{type: "text", name:"employee_id"}
+      %br
+      %br
+      Password:
+      %input{type: "text", name:"password"}
+      %br
+      %br
+      %input{type: "submit", value: "Login"}
+      %br
+      %br
+      %img.img-responsive{:src => "/hotel.jpg", :height => 800, :width => 1600}

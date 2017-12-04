@@ -1,3 +1,4 @@
+# Reservations
 class ReservationsController < ApplicationController
   def all
     @reservation = Reservation.includes(:customer)
@@ -9,6 +10,8 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.save!
+    redirect_to '/reservations/all'
   end
 
   def edit
@@ -17,12 +20,15 @@ class ReservationsController < ApplicationController
 
   def update
     reservation = Reservation.find_by(id: params[:reservation_id])
-    reservation.update_params(reservation_params)
+    reservation.update(room: params[:room])
+    reservation.update(start_date: params[:start_date])
+    reservation.update(end_date: params[:end_date])
     redirect_to '/reservations'
   end
 
   private
+
   def reservation_params
-    params.require(:reservation).permit(:customer_id, :room, :start_date, :end_date, :bill)
+    params.require(:reservation).permit(:customer_id, :room, :start_date, :end_date)
   end
 end
