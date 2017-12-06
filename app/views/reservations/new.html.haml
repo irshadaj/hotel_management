@@ -2,20 +2,22 @@
   %h1 Create new Reservation
   .row{:style => "background-color: yellow"}
     = form_for :reservation do |f|
-      Customer name:
+      %br
+      %br
+      =f.label 'Customer name: '
       = collection_select(:reservation, :customer_id, @customers.all, :id, :name)
       %br
       %br
-      Room number:
-      %input{:type=>"text", :required=>"true", :id =>"room", :name=>"room"}
+      = f.label 'Room number: '
+      = f.text_field :room, input_html: { required: true }
       %br
       %br
-      Check-in:
-      %input{:type=>"text", :required=>"true", :id=>"start_date", :name=>"start_date"}
+      = f.label 'Check-in: '
+      = f.text_field :start_date, input_html: { required: true }
       %br
       %br
-      Check-out:
-      %input{:type=>"text", :required=>"true", :id=>"end_date", :name=>"end_date"}
+      = f.label 'Check-out: '
+      = f.text_field :end_date, input_html: { required: true }
       %br
       %br
       = f.submit
@@ -30,11 +32,13 @@
     %br
     %br
     = link_to("Back to reservations", "/reservations/all")
-
-    %br
-    %br
+    ||
     = link_to("Home", "/dashboard")
+    ||
+    = link_to("Logout", "/")
 
     %br
     %br
-    = link_to("Logout", "/")
+    %img.img-responsive{:src => "/reservation.jpg", :height => 300, :width => 500}
+    %br
+    %br

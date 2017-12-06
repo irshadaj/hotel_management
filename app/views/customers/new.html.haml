@@ -5,11 +5,11 @@
       %br
       %br
       Name:
-      %input{:type=>"text", :required=>"true", :name=>"name"}
+      = f.text_field :name, input_html: { required: true }
       %br
       %br
-      Address:
-      %input{:type=>"text", :required=>"true", :name=>"address"}
+      = f.label 'Address: '
+      = f.text_field :address, input_html: { required: true }
       %br
       %br
       %br
@@ -19,20 +19,20 @@
         Credit Card information:
       %br
       %br
-      Name on Credit Card:
-      %input{:type=>"text", :required=>"true", :name=>"credit_name"}
+      = f.label 'Name on Credit Card: '
+      = f.text_field :credit_name, input_html: { required: true }
       %br
       %br
-      Number:
-      %input{:type=>"text", :required=>"true", :name=>"credit_num"}
+      = f.label 'Number: '
+      = f.text_field :credit_num, input_html: { required: true }
       %br
       %br
-      Expiry:
-      %input{:type=>"text", :required=>"true", :name=>"credit_exp"}
+      = f.label 'Expiry: '
+      = f.text_field :credit_exp, input_html: { required: true }
       %br
       %br
-      CVV:
-      %input{:type=>"text", :required=>"true", :name=>"credit_cvv"}
+      = f.label 'CVV: '
+      = f.text_field :credit_cvv, input_html: { required: true }
       %br
       %br
       = f.submit
@@ -42,13 +42,13 @@
     %br
     %br
     = link_to("Back to customers", "/customers/all")
-
-    %br
-    %br
+    ||
     = link_to("Home", "/dashboard")
-
-    %br
-    %br
+    ||
     = link_to("Logout", "/")
+    %br
+    %br
+
+    %img.img-responsive{:src => "/customer.jpg", :height => 300, :width => 500}
     %br
     %br

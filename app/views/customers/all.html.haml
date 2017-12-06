@@ -1,20 +1,22 @@
 .row{:style => "background-color: lightgreen"}
   %h1 Customers
+  %br
+  %br
+  %center
+    = link_to("Create New Customer", "/customers/new")
   %ol
     - @customers.each do |customer|
       %li Name: #{customer.name}
       Address: #{customer.address}
-
-  %br
-  %br
-  = link_to("Create New Customer", "/customers/new")
-
+      %br
+      %br
   %hr
 
     %br
     %br
-    = link_to("Home", "/dashboard")
-
-    %br
-    %br
-    = link_to("Logout", "/")
+    %center
+      = link_to("Home", "/dashboard")
+      ||
+      = link_to("Logout", "/")
+      %br
+      %br

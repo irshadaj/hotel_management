@@ -1,7 +1,8 @@
 %h1 Reservations
 .row{:style => "background-color: lightgreen"}
   %br
-  = link_to("New Reservation", "/reservations/new/")
+  %center
+    = link_to("New Reservation", "/reservations/new/")
   %br
   %br
 
@@ -19,10 +20,9 @@
 
     %br
     %br
-    = link_to("Home", "/dashboard")
-
-    %br
-    %br
-    = link_to("Logout", "/")
-    %br
-    %br
+    %center
+      = link_to("Home", "/dashboard")
+      ||
+      = link_to("Logout", "/")
+      %br
+      %br

@@ -19,6 +19,6 @@ class CustomersController < ApplicationController
 
   private
   def customer_params
-    params.require(:customer).require(:name).permit(:address, :credit_name, :credit_num, :credit_exp, :credit_cvv)
+    params.require(:customer).permit(:name, :address, :credit_name, :credit_num, :credit_exp, :credit_cvv)
   end
 end
